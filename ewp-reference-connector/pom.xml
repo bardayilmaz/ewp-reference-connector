@@ -128,8 +128,8 @@
                             <goal>install-node-and-npm</goal>
                         </goals>
                         <configuration>
-                            <nodeVersion>v5.3.0</nodeVersion>
-                            <npmVersion>3.3.12</npmVersion>
+                            <nodeVersion>v6.15.0</nodeVersion>
+                            <npmVersion>3.10.10</npmVersion>
                         </configuration>
                         <phase>generate-resources</phase>
                     </execution>
@@ -158,17 +158,20 @@
                         <goals>
                             <goal>gulp</goal>
                         </goals>
-                        <phase>generate-resources</phase>
+                        <phase>install</phase>
                     </execution>
 
                     <!-- Run karma tests -->
                     <execution>
-                        <id>javascript tests</id>
+                        <id>run karma tests</id>
                         <goals>
-                            <goal>karma</goal>
+                            <goal>npm</goal>
                         </goals>
+
+                        <phase>test</phase>
+
                         <configuration>
-                            <karmaConfPath>src/test/javascript/karma.conf.js</karmaConfPath>
+                            <arguments>run test --karma-config src/test/javascript/karma.conf.js</arguments>
                         </configuration>
                     </execution>
                 </executions>

@@ -3,7 +3,7 @@
 # Based on Java
 ############################################################
 
-FROM java:8-jre
+FROM openjdk:8u342-jre
 
 MAINTAINER Mikael Berglund with props to https://github.com/tomitribe/docker-tomee
 
@@ -17,8 +17,8 @@ WORKDIR /usr/local/tomee
 RUN gpg --keyserver pgpkeys.mit.edu --recv-key 6D545F97
 
 RUN set -x \
-	&& curl -fSL https://dist.apache.org/repos/dist/release/tomee/tomee-7.0.4/apache-tomee-7.0.4-plus.tar.gz.asc -o tomee.tar.gz.asc \
-	&& curl -fSL http://apache.rediris.es/tomee/tomee-7.0.4/apache-tomee-7.0.4-plus.tar.gz -o tomee.tar.gz \
+	&& curl -fSL https://archive.apache.org/dist/tomee/tomee-7.0.4/apache-tomee-7.0.4-plus.tar.gz.asc -o tomee.tar.gz.asc \
+    && curl -fSL https://archive.apache.org/dist/tomee/tomee-7.0.4/apache-tomee-7.0.4-plus.tar.gz -o tomee.tar.gz \
 	&& gpg --batch --verify tomee.tar.gz.asc tomee.tar.gz \
 	&& tar -zxf tomee.tar.gz \
 	&& mv apache-tomee-plus-7.0.4/* /usr/local/tomee \

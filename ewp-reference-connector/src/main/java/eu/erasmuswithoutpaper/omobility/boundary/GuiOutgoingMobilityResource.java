@@ -96,13 +96,13 @@ public class GuiOutgoingMobilityResource {
         return javax.ws.rs.core.Response.ok(omobilitiesResponse).build();
     }
     
-    @POST
-    @Path("omobilities-update")
-    @Produces(MediaType.APPLICATION_JSON)
-    public javax.ws.rs.core.Response omobilitiesUpdate(ClientRequest clientRequest) {
-        ClientResponse omobilitiesResponse = restClient.sendRequest(clientRequest, eu.erasmuswithoutpaper.api.omobilities.endpoints.OmobilitiesUpdateResponse.class);
-        return javax.ws.rs.core.Response.ok(omobilitiesResponse).build();
-    }
+//    @POST
+//    @Path("omobilities-update")
+//    @Produces(MediaType.APPLICATION_JSON)
+//    public javax.ws.rs.core.Response omobilitiesUpdate(ClientRequest clientRequest) {
+//        ClientResponse omobilitiesResponse = restClient.sendRequest(clientRequest, eu.erasmuswithoutpaper.api.omobilities.endpoints.OmobilitiesUpdateResponse.class);
+//        return javax.ws.rs.core.Response.ok(omobilitiesResponse).build();
+//    }
 
     @GET
     @Path("update/get_all")
